@@ -1,1 +1,0 @@
-await contract.verifyCertificate(certHash);

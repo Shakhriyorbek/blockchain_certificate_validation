@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blockchain Certificate Verification</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.6.0/dist/ethers.umd.min.js"></script>
+  <script src="./abi.js"></script>
+  <script defer src="./script.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    h1 { color: #333; }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    label { display: block; margin-top: 10px; }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover { background: #004ecc; }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Blockchain Certificate Registry</h1>
+
+    <button id="connectButton">🔗 Connect MetaMask</button>
+
+    <h2>Issue Certificate</h2>
+    <label>Student Name:</label>
+    <input id="student" type="text" placeholder="e.g. Alice" />
+
+    <label>Course Name:</label>
+    <input id="course" type="text" placeholder="e.g. Blockchain 101" />
+
+    <button id="issueButton">Issue Certificate</button>
+
+    <h2>Verify Certificate</h2>
+    <label>Certificate Hash:</label>
+    <input id="hash" type="text" placeholder="Enter certificate hash" />
+    <button id="verifyButton">Verify</button>
+
+    <h3>Result:</h3>
+    <pre id="result">No data yet.</pre>
+  </div>
+</body>
+</html>
