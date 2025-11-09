@@ -1,0 +1,37 @@
+// abi.js — CertificateRegistry ABI (Truffle build'ten)
+window.contractABI = [
+  {"inputs":[],"stateMutability":"nonpayable","type":"constructor"},
+  {"anonymous":false,"inputs":[
+    {"indexed":false,"internalType":"bytes32","name":"certHash","type":"bytes32"},
+    {"indexed":false,"internalType":"string","name":"studentName","type":"string"},
+    {"indexed":false,"internalType":"string","name":"courseName","type":"string"},
+    {"indexed":false,"internalType":"uint256","name":"issueDate","type":"uint256"}
+  ],"name":"CertificateIssued","type":"event"},
+  {"inputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],
+   "name":"certificates","outputs":[
+    {"internalType":"string","name":"studentName","type":"string"},
+    {"internalType":"string","name":"courseName","type":"string"},
+    {"internalType":"uint256","name":"issueDate","type":"uint256"},
+    {"internalType":"address","name":"issuer","type":"address"},
+    {"internalType":"bool","name":"isValid","type":"bool"}],
+   "stateMutability":"view","type":"function"},
+  {"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],
+   "stateMutability":"view","type":"function"},
+  {"inputs":[
+    {"internalType":"string","name":"studentName","type":"string"},
+    {"internalType":"string","name":"courseName","type":"string"},
+    {"internalType":"uint256","name":"issueDate","type":"uint256"}],
+   "name":"issueCertificate","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],
+   "stateMutability":"nonpayable","type":"function"},
+  {"inputs":[{"internalType":"bytes32","name":"certHash","type":"bytes32"}],
+   "name":"verifyCertificate","outputs":[
+    {"internalType":"string","name":"","type":"string"},
+    {"internalType":"string","name":"","type":"string"},
+    {"internalType":"uint256","name":"","type":"uint256"},
+    {"internalType":"address","name":"","type":"address"},
+    {"internalType":"bool","name":"","type":"bool"}],
+   "stateMutability":"view","type":"function"},
+  {"inputs":[{"internalType":"bytes32","name":"certHash","type":"bytes32"}],
+   "name":"revokeCertificate","outputs":[],
+   "stateMutability":"nonpayable","type":"function"}
+];
