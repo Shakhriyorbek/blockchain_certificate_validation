@@ -7,6 +7,11 @@ module.exports = {
       port: 7545,          // Ganache varsayılan portu
       network_id: "*",     // Tüm ağ ID'leriyle eşleşir
     },
+    anvil: {
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: "*"
+    },    
   },
 
   mocha: {

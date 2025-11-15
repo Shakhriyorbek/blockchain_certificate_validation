@@ -59,9 +59,12 @@ async function connectWallet() {
 
     const chainIdHex = await window.ethereum.request({ method: "eth_chainId" });
     // Accept common local ids (1337/5777); warn otherwise
-    const localOk = chainIdHex === "0x539" || chainIdHex === "0x1691";
+    const localOk =
+      chainIdHex === "0x539" ||   // 1337 Ganache
+      chainIdHex === "0x1691" ||  // 5777 Ganache
+      chainIdHex === "0x7a69";    // 31337 Anvil
     if (!localOk) {
-      setResult(`⚠️ Wrong network (chainId=${chainIdHex}). Select Localhost 7545 in MetaMask and retry.`);
+      setResult(`⚠️ Wrong network (chainId=${chainIdHex}). ` + `Use one of: Ganache (1337/5777) or Anvil (31337) in MetaMask.`);
       return;
     }
 
