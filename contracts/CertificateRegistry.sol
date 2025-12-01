@@ -44,8 +44,4 @@ contract CertificateRegistry {
         Certificate memory cert = certificates[certHash];
         return (cert.studentName, cert.courseName, cert.issueDate, cert.issuer, cert.isValid);
     }
-
-    function revokeCertificate(bytes32 certHash) public onlyOwner {
-        certificates[certHash].isValid = false;
-    }
 }
